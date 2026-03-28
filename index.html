@@ -134,7 +134,7 @@
 
       .contact-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         background: rgba(0, 0, 0, 0.05);
         padding: 15px 40px;
         gap: 10px;
@@ -148,6 +148,7 @@
         font-size: 0.8rem;
         color: var(--text-muted);
         text-decoration: none;
+        word-break: break-all;
       }
       .contact-link i {
         color: var(--primary);
@@ -311,20 +312,45 @@
         --gradient-dir: right;
       }
 
-      /* جعل التصميم Responsive للموبايل */
+      /* استجابة التصميم للهواتف */
       @media (max-width: 768px) {
-        .main-content {
+        .cv-wrapper {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+        }
+        header {
+          flex-direction: column;
+          text-align: center;
+          padding: 30px 20px;
+          gap: 15px;
+        }
+        .hero-text h1 {
+          font-size: 1.8rem;
+        }
+        .contact-grid {
+          padding: 20px;
           grid-template-columns: 1fr;
         }
-        .project-grid {
-          grid-template-columns: 1fr 1fr;
+        .main-content {
+          grid-template-columns: 1fr;
         }
         aside {
           border-inline-end: none;
           border-bottom: 1px solid var(--border);
+          padding: 30px 20px;
         }
-        .hero-text h1 {
-          font-size: 1.5rem; /* صغّر أو كبّر الرقم حسب رغبتك */
+        main {
+          padding: 30px 20px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .toolbar {
+          width: 90%;
+          justify-content: center;
+          bottom: 10px;
+          padding: 8px 15px;
         }
       }
 
@@ -332,7 +358,11 @@
         .project-grid {
           grid-template-columns: 1fr;
         }
+        .hero-text h1 {
+          font-size: 1.5rem;
+        }
       }
+
       @media print {
         .toolbar {
           display: none !important;
@@ -361,8 +391,6 @@
         @page {
           size: A4;
           margin: 0;
-        }
-        @media print {
         }
       }
     </style>

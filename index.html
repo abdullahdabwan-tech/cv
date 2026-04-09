@@ -367,10 +367,12 @@
         .toolbar {
           display: none !important;
         }
+
         body {
           background: white;
           padding: 0;
         }
+
         .cv-wrapper {
           width: 210mm;
           height: 297mm;
@@ -379,15 +381,58 @@
           border: none;
           max-width: none;
         }
+
+        /* 🔥 الهيدر الأساسي */
         header {
-          padding: 15px 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 15px 25px;
+          gap: 15px;
         }
+
+        .hero-text {
+          flex: 1;
+        }
+
+        .hero-text h1 {
+          font-size: 1.6rem;
+        }
+
+        .profile-box img {
+          width: 90px;
+          height: 90px;
+        }
+
+        /* ✅ عربي */
+        html[lang="ar"] header {
+          flex-direction: row-reverse; /* الصورة يمين */
+          text-align: right;
+        }
+
+        /* ✅ إنجليزي */
+        html[lang="en"] header {
+          flex-direction: row; /* الصورة يسار */
+          text-align: left;
+        }
+
+        /* يخلي النص داخل الهيرو يمشي مع اللغة */
+        html[lang="ar"] .hero-text {
+          text-align: right;
+        }
+
+        html[lang="en"] .hero-text {
+          text-align: left;
+        }
+
         .main-content {
           grid-template-columns: 220px 1fr;
         }
+
         .project-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
         @page {
           size: A4;
           margin: 0;

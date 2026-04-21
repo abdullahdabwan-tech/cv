@@ -1,869 +1,204 @@
 <!doctype html>
-<html lang="ar" dir="rtl" id="html-tag">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Abdullah Dabwan - Full Stack Developer specialized in React, Next.js, .NET Core, and SQL Server. Portfolio and projects."
-    />
-    <meta
-      name="keywords"
-      content="Abdullah Dabwan, Full Stack Developer, React Developer, Next.js, .NET Core, C#, SQL Server, Web Developer"
-    />
-    <meta name="author" content="Abdullah Dabwan" />
-    <meta
-      property="og:title"
-      content="Abdullah Dabwan | Full Stack Developer"
-    />
 
-    <meta
-      property="og:description"
-      content="Portfolio of Abdullah Dabwan - React, Next.js, .NET Core Developer"
-    />
+    <title>Abdullah Dabwan | Back-End Developer</title>
 
-    <meta property="og:type" content="website" />
-
-    <meta property="og:url" content="https://abdullahdabwan-tech.github.io/" />
-
-    <meta
-      property="og:image"
-      content="https://abdullahdabwan-tech.github.io/abdullah.jpg"
-    />
-    <meta name="robots" content="index, follow" />
-    <title>Abdullah Dabwan | Full-Stack Developer</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <style>
-      :root {
-        --primary: #0088ff;
-        --secondary: #00d4ff;
-        --bg-body: #05070a;
-        --bg-cv: #0f172a;
-        --header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        --card-bg: rgba(255, 255, 255, 0.04);
-        --border: rgba(255, 255, 255, 0.1);
-        --text-main: #ffffff;
-        --text-muted: #cbd5e1;
-        --aside-bg: rgba(0, 0, 0, 0.15);
-      }
-
-      .light-mode {
-        --bg-body: #f0f2f5;
-        --bg-cv: #ffffff;
-        --header-bg: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%);
-        --card-bg: #f1f5f9;
-        --border: #cbd5e1;
-        --text-main: #1e293b;
-        --text-muted: #475569;
-        --aside-bg: #f8fafc;
-        --primary: #2563eb;
-        --secondary: #0ea5e9;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
       body {
-        background-color: var(--bg-body);
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 50px;
-        transition: background 0.3s ease;
+        font-family: "Inter", sans-serif;
+        background: #f1f5f9;
+        margin: 0;
+        padding: 40px 15px;
+        color: #0f172a;
       }
 
-      .cv-wrapper {
-        width: 95%;
-        max-width: 210mm;
-        min-height: 260mm;
-        margin: 20px auto;
-        background: var(--bg-cv);
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        position: relative;
-        overflow: hidden;
+      .cv {
+        max-width: 850px;
+        margin: auto;
+        background: white;
+        padding: 40px;
+        border: 1px solid #e2e8f0;
       }
 
-      header {
-        padding: 25px 40px;
-        background: var(--header-bg);
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        gap: 30px;
-        align-items: center;
-        border-bottom: 1px solid var(--border);
+      /* HEADER */
+      h1 {
+        font-size: 26px;
+        margin-bottom: 5px;
       }
 
-      .hero-text h1 {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--text-main);
-        line-height: 1.1;
-      }
-      .hero-text h1 span {
-        color: var(--primary);
-      }
-      .hero-text p {
-        font-size: 1rem;
-        color: var(--secondary);
-        margin-top: 5px;
-        font-weight: 600;
+      h1 span {
+        color: #2563eb;
       }
 
-      .profile-box img {
-        width: 110px;
-        height: 110px;
-        border-radius: 15px;
-        border: 3px solid var(--primary);
-        object-fit: cover;
+      .role {
+        color: #64748b;
+        font-size: 14px;
+        margin-bottom: 10px;
       }
 
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        background: rgba(0, 0, 0, 0.05);
-        padding: 15px 40px;
-        gap: 10px;
-        border-bottom: 1px solid var(--border);
+      .contact {
+        font-size: 13px;
+        color: #475569;
+        line-height: 1.6;
       }
 
-      .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        text-decoration: none;
-        word-break: break-all;
-      }
-      .contact-link i {
-        color: var(--primary);
-        width: 15px;
-      }
-
-      .main-content {
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        flex-grow: 1;
-      }
-
-      aside {
-        background: var(--aside-bg);
-        padding: 25px;
-        border-inline-end: 1px solid var(--border);
-      }
-      main {
-        padding: 25px 30px;
-      }
-
-      h2 {
-        font-size: 1rem;
-        text-transform: uppercase;
-        color: var(--text-main);
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      h2::after {
-        content: "";
-        height: 1px;
-        flex: 1;
-        background: linear-gradient(
-          to var(--gradient-dir, left),
-          var(--primary),
-          transparent
-        );
-      }
-
+      /* SECTION */
       .section {
-        margin-bottom: 20px;
+        margin-top: 25px;
       }
 
-      .skill-group {
+      .section h2 {
+        font-size: 13px;
+        color: #2563eb;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #334155;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+
+      li {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      /* PROJECT */
+      .project {
         margin-bottom: 15px;
       }
-      .skill-group p {
-        color: var(--secondary);
-        font-size: 0.75rem;
-        margin-bottom: 5px;
-        font-weight: bold;
-        border-bottom: 1px solid var(--border);
-        display: inline-block;
-      }
 
-      .skill-tag {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.7rem;
-        margin: 0 2px 4px 0;
-        display: inline-block;
-        color: var(--text-main);
-      }
-
-      .edu-card {
-        margin-bottom: 12px;
-        border-inline-start: 3px solid var(--primary);
-        padding-inline-start: 10px;
-      }
-      .edu-card h4 {
-        font-size: 0.85rem;
-        color: var(--text-main);
-      }
-      .edu-card p {
-        font-size: 0.7rem;
-        color: var(--text-muted);
-      }
-
-      .summary-card {
-        background: var(--card-bg);
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        text-align: justify;
-      }
-
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-
-      .project-item {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        padding: 8px;
-        border-radius: 6px;
-        height: 100%;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.2s ease;
-      }
-      .project-item:hover {
-        border-color: var(--primary);
-        transform: translateY(-2px);
-      }
-      .project-item h5 {
-        color: var(--primary);
-        margin-bottom: 2px;
-        font-size: 0.75rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .project-item p {
-        font-size: 0.65rem;
-        color: var(--text-muted);
-        line-height: 1.2;
-      }
-
-      .toolbar {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #1e293b;
-        padding: 10px 25px;
-        border-radius: 50px;
-        display: flex;
-        gap: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        z-index: 100;
-        border: 1px solid var(--primary);
-      }
-      .btn-tool {
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
+      .project-title {
         font-weight: 600;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
       }
 
-      [lang="ar"] {
-        font-family: "Cairo", sans-serif;
-        --gradient-dir: left;
-      }
-      [lang="en"] {
-        font-family: "Inter", sans-serif;
-        --gradient-dir: right;
-      }
-
-      /* استجابة التصميم للهواتف */
-      @media (max-width: 768px) {
-        .cv-wrapper {
-          width: 100%;
-          margin: 0;
-          border-radius: 0;
-        }
-        header {
-          flex-direction: column;
-          text-align: center;
-          padding: 30px 20px;
-          gap: 15px;
-        }
-        .hero-text h1 {
-          font-size: 1.8rem;
-        }
-        .contact-grid {
-          padding: 20px;
-          grid-template-columns: 1fr;
-        }
-        .main-content {
-          grid-template-columns: 1fr;
-        }
-        aside {
-          border-inline-end: none;
-          border-bottom: 1px solid var(--border);
-          padding: 30px 20px;
-        }
-        main {
-          padding: 30px 20px;
-        }
-        .project-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .toolbar {
-          width: 90%;
-          justify-content: center;
-          bottom: 10px;
-          padding: 8px 15px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .project-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-text h1 {
-          font-size: 1.5rem;
-        }
-      }
-
-      @media print {
-        .toolbar {
-          display: none !important;
-        }
-
-        body {
-          background: white;
-          padding: 0;
-        }
-
-        .cv-wrapper {
-          width: 210mm;
-          height: 297mm;
-          margin: 0;
-          box-shadow: none;
-          border: none;
-          max-width: none;
-        }
-
-        /* 🔥 الهيدر الأساسي */
-        header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 15px 20px;
-          gap: 15px;
-        }
-
-        .hero-text {
-          flex: 1;
-        }
-
-        .hero-text h1 {
-          font-size: 1.6rem;
-        }
-
-        .profile-box img {
-          width: 90px;
-          height: 90px;
-        }
-
-        /* ✅ عربي */
-        html[lang="ar"] header {
-          flex-direction: row-reverse; /* الصورة يمين */
-          text-align: right;
-        }
-
-        /* ✅ إنجليزي */
-        html[lang="en"] header {
-          flex-direction: row; /* الصورة يسار */
-          text-align: left;
-        }
-
-        /* يخلي النص داخل الهيرو يمشي مع اللغة */
-        html[lang="ar"] .hero-text {
-          text-align: right;
-        }
-
-        html[lang="en"] .hero-text {
-          text-align: left;
-        }
-
-        .main-content {
-          grid-template-columns: 220px 1fr;
-        }
-
-        .project-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        @page {
-          size: A4;
-          margin: 0;
-        }
+      .link {
+        font-size: 12px;
+        color: #2563eb;
       }
     </style>
   </head>
+
   <body>
-    <div class="cv-wrapper" id="cv-content"></div>
+    <div class="cv">
+      <!-- HEADER -->
+      <h1>ABDULLAH <span>DABWAN</span></h1>
+      <div class="role">Back-End Developer (.NET)</div>
 
-    <div class="toolbar">
-      <button class="btn-tool" onclick="toggleLanguage()">
-        <i class="fas fa-language"></i> <span id="lang-label">English</span>
-      </button>
-      <button class="btn-tool" onclick="toggleTheme()">
-        <i class="fas fa-moon" id="theme-icon"></i>
-        <span id="theme-label">Dark</span>
-      </button>
+      <div class="contact">
+        Email: abdullahdabwandev@gmail.com | Phone: +966 538659455 <br />
+        GitHub: github.com/abdullahdabwan-tech | LinkedIn:
+        linkedin.com/in/abdullah-dabwan
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+          Back-End Developer specializing in .NET Core and C#. Experienced in
+          building RESTful APIs, authentication systems, and working with SQL
+          Server. Strong understanding of clean architecture, scalable backend
+          systems, and structured software design principles.
+        </p>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="section">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>.NET Core, C#, ASP.NET Core</li>
+          <li>Entity Framework Core, SQL Server</li>
+          <li>RESTful APIs Design</li>
+          <li>Authentication & Authorization</li>
+          <li>Validation & Error Handling</li>
+          <li>OOP, Clean Architecture</li>
+          <li>Git, GitHub, Postman</li>
+        </ul>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <div class="project-title">Task Management System</div>
+          <div class="link">
+            GitHub: https://github.com/abdullahdabwan-tech/TaskManagement
+          </div>
+          <p>
+            Backend system with authentication, database integration, and REST
+            API design. Includes validation, error handling, and clean
+            architecture implementation.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-title">DVLD System (Driver Licensing)</div>
+          <div class="link">
+            GitHub: github.com/abdullahdabwan-tech/DVLDWithAbuHadhoud
+          </div>
+          <p>
+            Simulates real-world licensing workflow with structured business
+            logic and validation rules.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-title">School Management System</div>
+          <div class="link">
+            GitHub: github.com/abdullahdabwan-tech/WinSchoolPro
+          </div>
+          <p>
+            Desktop system for managing school operations using modular
+            architecture and structured data handling.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Bank System (Console Application)</div>
+          <div class="link">
+            GitHub: github.com/abdullahdabwan-tech/BankInConsole
+          </div>
+          <p>
+            Implements banking operations using OOP principles and structured
+            program logic.
+          </p>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <h2>Education</h2>
+        <ul>
+          <li>Programming Advice – Software Architecture</li>
+          <li>Tarmeez Academy – Full-Stack Development Diploma</li>
+          <li>Elzero Web School – Front-End Track</li>
+        </ul>
+      </div>
+
+      <!-- EXTRA -->
+      <div class="section">
+        <h2>Additional Knowledge</h2>
+        <p>
+          Basic understanding of front-end and desktop technologies including
+          React, Flutter, WPF, and WinForms.
+        </p>
+      </div>
     </div>
-
-    <script>
-      let isArabic = true;
-      let isDark = true;
-
-      const db = {
-        ar: {
-          name: "عبدالله <span>دبوان</span>",
-          title: "مهندس برمجيات Full-Stack",
-          sections: {
-            stack: "المهارات التقنية",
-            soft: "مهارات إضافية",
-            edu: "التعليم",
-            lang: "اللغات",
-            profile: "الملف الشخصي",
-            projects: "معرض المشاريع",
-          },
-          stack: {
-            web: [
-              "الويب والموبايل",
-              "HTML",
-              "CSS",
-              "JavaScript",
-              "React",
-              "Next.js",
-              "Flutter",
-              "React Native",
-            ],
-            back: [
-              "الخلفية وقواعد البيانات",
-              ".NET Core",
-              "C#",
-              "EF Core",
-              "SQL Server",
-              "RESTful APIs",
-            ],
-            desk: [
-              "برمجيات سطح المكتب",
-              "WPF",
-              "WinForms",
-              "Design Patterns",
-              "Clean Architecture",
-            ],
-          },
-          soft: [
-            "حل المشكلات",
-            "العمل الجماعي",
-            "إدارة الوقت",
-            "التفكير التحليلي",
-          ],
-          edu: [
-            ["Programming Advice", "هندسة البرمجيات المتقدمة والأنماط"],
-            ["أكاديمية ترميز", "دبلوم تطوير الويب الشامل"],
-            ["Elzero Web School", "ماستر كلاس Front-End"],
-          ],
-          langs: ["العربية (الأم)", "الإنجليزية (متقدم)"],
-          profile:
-            "مهندس برمجيات <b>Full-Stack</b> طموح. متميز في بناء أنظمة خلفية قوية ومعمارية نظيفة باستخدام <b>.NET Core</b>، وتصميم واجهات عصرية بـ <b>React/Next.js</b>. خبير في مفاهيم <b>OOP</b> لضمان استدامة الكود.",
-          projects: {
-            web: [
-              "تطبيقات الويب",
-              [
-                [
-                  "Bootstrap Temp",
-                  "موقع بـ Bootstrap 5.",
-                  "https://abdullahdabwan-tech.github.io/TempWithBootstrap/",
-                ],
-                [
-                  "Multi-Page",
-                  "قالب ويب متكامل.",
-                  "https://abdullahdabwan-tech.github.io/SevrelPageTemp/",
-                ],
-                [
-                  "Modern UI",
-                  "تصميم عصري وجذاب.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempThree/",
-                ],
-                [
-                  "Quick Proto",
-                  "نموذج أولي سريع.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempOne/",
-                ],
-                [
-                  "SCSS Style",
-                  "صفحة هبوط معمارية.",
-                  "https://abdullahdabwan-tech.github.io/TempWithSass/",
-                ],
-                [
-                  "Clean Layout",
-                  "تنسيق بسيط واحترافي.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempTwo/",
-                ],
-              ],
-            ],
-            desk: [
-              "أنظمة سطح المكتب",
-              [
-                [
-                  "TaskManger",
-                  "إدارة مهام WinForms.",
-                  "https://github.com/abdullahdabwan-tech/TaskMangerInWinfrm",
-                ],
-                [
-                  "SchoolPro",
-                  "إدارة مدارس .",
-                  "https://github.com/abdullahdabwan-tech/WinSchoolPro",
-                ],
-                [
-                  "DVLD System",
-                  "نظام رخص قيادة.",
-                  "https://github.com/abdullahdabwan-tech/DVLDWithAbuHadhoud",
-                ],
-                [
-                  "Bank System",
-                  "نظام بنكي متكامل.",
-                  "https://github.com/abdullahdabwan-tech/BankInConsole",
-                ],
-                [
-                  "XO Final",
-                  "لعبة بتصميم نهائي.",
-                  "https://github.com/abdullahdabwan-tech/XO-Game-Final",
-                ],
-                [
-                  "Math Game",
-                  "لعبة رياضيات ذكية.",
-                  "https://github.com/abdullahdabwan-tech/MathGameInConsole",
-                ],
-              ],
-            ],
-            mobile: [
-              "تطبيقات الموبايل",
-              [
-                [
-                  "Meal App",
-                  "تطبيق وصفات بـ Flutter.",
-                  "https://github.com/abdullahdabwan-tech/Mobilemeal_app_flutter",
-                ],
-              ],
-            ],
-          },
-        },
-        en: {
-          name: "ABDULLAH <span>DABWAN</span>",
-          title: "Full-Stack Software Engineer",
-          sections: {
-            stack: "Technical Stack",
-            soft: "Soft Skills",
-            edu: "Education",
-            lang: "Languages",
-            profile: "Professional Profile",
-            projects: "Projects Portfolio",
-          },
-          stack: {
-            web: [
-              "WEB & MOBILE",
-              "React",
-              "Next.js",
-              "Flutter",
-              "React Native",
-              "Tailwind CSS",
-              "Redux",
-            ],
-            back: [
-              "BACK-END & DB",
-              ".NET Core",
-              "C#",
-              "EF Core",
-              "SQL Server",
-              "RESTful APIs",
-            ],
-            desk: [
-              "DESKTOP",
-              "WPF",
-              "WinForms",
-              "Design Patterns",
-              "Clean Architecture",
-            ],
-          },
-          soft: [
-            "Problem Solving",
-            "Teamwork",
-            "Time Management",
-            "Analytical Thinking",
-          ],
-          edu: [
-            ["Programming Advice", "Advanced Software Architecture"],
-            ["Tarmeez Academy", "Full-Stack Web Diploma"],
-            ["Elzero Web School", "Front-End Masterclass"],
-          ],
-          langs: ["Arabic (Native)", "English (Advanced)"],
-          profile:
-            "Ambitious <b>Full-Stack Developer</b>. Expert in <b>.NET Core</b> for robust back-end systems and <b>React/Next.js</b> for modern UI/UX. Skilled in <b>OOP</b> to deliver scalable digital solutions.",
-          projects: {
-            web: [
-              "Web Apps",
-              [
-                [
-                  "Bootstrap",
-                  "Professional B5 site.",
-                  "https://abdullahdabwan-tech.github.io/TempWithBootstrap/",
-                ],
-                [
-                  "Multi-Page",
-                  "Modern multi-page template.",
-                  "https://abdullahdabwan-tech.github.io/SevrelPageTemp/",
-                ],
-                [
-                  "Modern UI",
-                  "Clean UI/UX design.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempThree/",
-                ],
-                [
-                  "Proto-Type",
-                  "High-performance prototype.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempOne/",
-                ],
-                [
-                  "SCSS Landing",
-                  "Advanced SCSS page.",
-                  "https://abdullahdabwan-tech.github.io/TempWithSass/",
-                ],
-                [
-                  "Simple Layout",
-                  "Professional layout.",
-                  "https://abdullahdabwan-tech.github.io/simpleTempTwo/",
-                ],
-              ],
-            ],
-            desk: [
-              "Desktop & Console",
-              [
-                [
-                  "TaskManger",
-                  "WinForms management.",
-                  "https://github.com/abdullahdabwan-tech/TaskMangerInWinfrm",
-                ],
-                [
-                  "SchoolPro",
-                  "School system .",
-                  "https://github.com/abdullahdabwan-tech/WinSchoolPro",
-                ],
-                [
-                  "DVLD System",
-                  "Driver Licensing system.",
-                  "https://github.com/abdullahdabwan-tech/DVLDWithAbuHadhoud",
-                ],
-                [
-                  "Bank System",
-                  "Full Banking (Console).",
-                  "https://github.com/abdullahdabwan-tech/BankInConsole",
-                ],
-                [
-                  "XO Game",
-                  "XO with final polish.",
-                  "https://github.com/abdullahdabwan-tech/XO-Game-Final",
-                ],
-                [
-                  "Math Game",
-                  "Mathematical game.(Console)",
-                  "https://github.com/abdullahdabwan-tech/MathGameInConsole",
-                ],
-              ],
-            ],
-            mobile: [
-              "Mobile Dev",
-              [
-                [
-                  "Meal App",
-                  "Recipe app (Flutter).",
-                  "https://github.com/abdullahdabwan-tech/Mobilemeal_app_flutter",
-                ],
-              ],
-            ],
-          },
-        },
-      };
-
-      function render() {
-        const lang = isArabic ? "ar" : "en";
-        const d = db[lang];
-        document.getElementById("html-tag").lang = lang;
-        document.getElementById("html-tag").dir = isArabic ? "rtl" : "ltr";
-        document.getElementById("lang-label").innerText = isArabic
-          ? "English"
-          : "العربية";
-
-        const content = `
-            <header>
-                <div class="hero-text">
-                    <h1>${d.name}</h1>
-                    <p>${d.title}</p>
-                </div>
-                <div class="profile-box"><img src="abdullah.jpg" alt="Abdullah"></div>
-            </header>
-
-            <div class="contact-grid">
-                <a href="mailto:abdullahdabwandev@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> abdullahdabwandev@gmail.com</a>
-                <a href="https://wa.me/966538659455" class="contact-link"><i class="fab fa-whatsapp"></i> +966 538659455</a>
-                <a href="https://github.com/abdullahdabwan-tech" class="contact-link"><i class="fab fa-github"></i> github.com/abdullahdabwan-tech</a>
-                <a href="https://linkedin.com/in/abdullah-dabwan" class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/abdullah-dabwan</a>
-            </div>
-
-            <div class="main-content">
-                <aside>
-                    <section class="section">
-                        <h2>${d.sections.stack}</h2>
-                        <div class="skill-group"><p>${d.stack.web[0]}</p><br>${d.stack.web
-                          .slice(1)
-                          .map((s) => `<span class="skill-tag">${s}</span>`)
-                          .join("")}</div>
-                        <div class="skill-group"><p>${d.stack.back[0]}</p><br>${d.stack.back
-                          .slice(1)
-                          .map((s) => `<span class="skill-tag">${s}</span>`)
-                          .join("")}</div>
-                        <div class="skill-group"><p>${d.stack.desk[0]}</p><br>${d.stack.desk
-                          .slice(1)
-                          .map((s) => `<span class="skill-tag">${s}</span>`)
-                          .join("")}</div>
-                    </section>
-                   
-                    <section class="section">
-                        <h2>${d.sections.lang}</h2>
-                        ${d.langs.map((l) => `<div class="edu-card"><h4>${l}</h4></div>`).join("")}
-                    </section>
-                    <section class="section">
-                        <h2>${d.sections.edu}</h2>
-                        ${d.edu.map((e) => `<div class="edu-card"><h4>${e[0]}</h4><p>${e[1]}</p></div>`).join("")}
-                    </section>
-                </aside>
-
-                <main>
-                    <section class="section">
-                        <h2>${d.sections.profile}</h2>
-                        <div class="summary-card">${d.profile}</div>
-                    </section>
-
-                    <section class="section">
-                        <h2>${d.sections.projects}</h2>
-                        
-                        <div style="margin-bottom:12px">
-                            <h4 style="color:var(--secondary); font-size:0.85rem; margin-bottom:5px;"><i class="fas fa-globe"></i> ${d.projects.web[0]}</h4>
-                            <div class="project-grid">
-                                ${d.projects.web[1]
-                                  .map(
-                                    (p) => `
-                                    <a href="${p[2]}" target="_blank" class="project-item">
-                                        <h5>${p[0]} <i class="fas fa-external-link-alt" style="font-size:0.5rem"></i></h5>
-                                        <p>${p[1]}</p>
-                                    </a>
-                                `,
-                                  )
-                                  .join("")}
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom:12px">
-                            <h4 style="color:var(--secondary); font-size:0.85rem; margin-bottom:5px;"><i class="fas fa-desktop"></i> ${d.projects.desk[0]}</h4>
-                            <div class="project-grid">
-                                ${d.projects.desk[1]
-                                  .map(
-                                    (p) => `
-                                    <a href="${p[2]}" target="_blank" class="project-item">
-                                        <h5>${p[0]} <i class="fab fa-github" style="font-size:0.5rem"></i></h5>
-                                        <p>${p[1]}</p>
-                                    </a>
-                                `,
-                                  )
-                                  .join("")}
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 style="color:var(--secondary); font-size:0.85rem; margin-bottom:5px;"><i class="fas fa-mobile-alt"></i> ${d.projects.mobile[0]}</h4>
-                            <div class="project-grid">
-                                ${d.projects.mobile[1]
-                                  .map(
-                                    (p) => `
-                                    <a href="${p[2]}" target="_blank" class="project-item">
-                                        <h5>${p[0]} <i class="fab fa-github" style="font-size:0.5rem"></i></h5>
-                                        <p>${p[1]}</p>
-                                    </a>
-                                `,
-                                  )
-                                  .join("")}
-                            </div>
-                        </div>
-                    </section>
-                </main>
-            </div>
-        `;
-        document.getElementById("cv-content").innerHTML = content;
-      }
-
-      function toggleLanguage() {
-        isArabic = !isArabic;
-        render();
-      }
-      function toggleTheme() {
-        isDark = !isDark;
-        document.body.classList.toggle("light-mode");
-        document.getElementById("theme-icon").className = isDark
-          ? "fas fa-moon"
-          : "fas fa-sun";
-        document.getElementById("theme-label").innerText = isDark
-          ? "Dark"
-          : "Light";
-      }
-      render();
-
-      document.querySelectorAll("a").forEach((link) => {
-        link.setAttribute("target", "_blank");
-      });
-    </script>
   </body>
 </html>
